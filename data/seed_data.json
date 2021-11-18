@@ -1,8 +1,12 @@
 [
-    {
-        "anime_id": 1,
-        "anime_name": "Naruto",
-        "episode_title":	"Enter: Naruto Uzumaki!",
-        "episode_length": 22
+    { "title": "Akame ga Kill!",
+        "poster_path": "https://myanimelist.net/anime/22199/Akame_ga_Kill"
+      
+      
+   
+    },
+    { "title": "Akame ga Kill!",
+    "poster_path": "https://cdn.myanimelist.net/images/anime/13/77968.jpg?s=7928953bdc9eba056004f5a328973d42"
+  
     }
 ]
