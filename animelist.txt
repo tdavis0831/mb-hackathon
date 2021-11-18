@@ -1,0 +1,3 @@
+Naruto, 50
+Hello World, 10
+usagi drop, 11
