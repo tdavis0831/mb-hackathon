@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}user{% endblock %}
+
+
+{% block body %}
+  <h1>Welcome {{ session["name"] }}, Please choose from the following selections! </h1>
+
+  <form action="/create-log", method="POST">
+    <p>
+      Anime Name<input type="text" name="anime_name" required>
+    </p>
+
+	
+    <p>
+      Episode Title <input type="text" name="episode_title" required>
+    </p>
+
+	<p>
+		Episode Lenght <input type="text" name="episode_length" required>
+	</p>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+ 
+  
+{% endblock %}

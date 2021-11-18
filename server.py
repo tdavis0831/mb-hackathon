@@ -91,7 +91,12 @@ def create_log():
 
     return render_template("anime-added.html", anime_name=anime_name)
 
+@app.route("/all-anime")
 
+def all_anime():
+    animes=crud.get_animes()
+
+    return render_template("all-animes.html", animes=animes)
 
 if __name__ == "__main__":
     # DebugToolbarExtension(app)

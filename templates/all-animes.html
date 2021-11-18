@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}user{% endblock %}
+
+
+{% block body %}
+
+<h1>animes</h1>
+
+ 
+  
+
+  {% for i in animes %}
+
+
+   
+       <h2> {{ i.anime_name }}</h2>
+	
+		{% endfor %}
+ 
+  
+{% endblock %}

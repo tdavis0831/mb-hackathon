@@ -1,5 +1,7 @@
-from model import db, User, Anime, connect_to_db
+from model import db, User, Anime, FutureAnime, connect_to_db
 
+def get_animes():
+    return db.session.query(Anime).all()
 
 
 
@@ -28,5 +30,6 @@ def create_anime(anime_name, episode_title, episode_length):
     db.session.commit()
 
     return episode_entry
+
 
 
