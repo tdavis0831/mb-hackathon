@@ -32,16 +32,16 @@ class Anime (db.Model):
 	animes = db.relationship("User", backref="animes")
 
 
-class FutureAnime (db.model):
+class FutureAnime (db.Model):
 
     __tablename__: "future-animes"
 
     
-	anime_id =db.Column(db.Integer, autoincrement=True, primary_key=True)
-	anime_name = db.Column(db.String, unique=True)
-	fk_user_id= db.Column((db.Integer), db.ForeignKey("users.user_id"))
+    anime_id =db.Column(db.Integer, autoincrement=True, primary_key=True)
+    anime_name = db.Column(db.String, unique=True)
+    fk_user_id= db.Column((db.Integer), db.ForeignKey("users.user_id"))
 
-	future_animes = db.relationship("User", backref="animes")
+    future_animes = db.relationship("User", backref="future-animes")
 
 
 

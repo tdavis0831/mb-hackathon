@@ -74,8 +74,22 @@ def process_login():
 
     return render_template("user-profile.html", user=user)
 
+@app.route("/log")
+def watched_anime_log():
 
 
+    return render_template("log.html")
+
+@app.route("/create-log", methods=["POST"])
+def create_log():
+    anime_name = request.form.get("anime_name")
+    episode_title = request.form.get("episode_title")
+    episode_length = request.form.get("episode_length")
+
+    
+    anime_added=crud.create_anime(anime_name, episode_title, episode_length)
+
+    return render_template("anime-added.html", anime_name=anime_name)
 
 
 

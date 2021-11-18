@@ -20,9 +20,9 @@ def get_user_by_email(email):
 
 
 
-def create_anime(anime_name, episode_title):
+def create_anime(anime_name, episode_title, episode_length):
 
-    episode_entry=Anime(anime_name=anime_name, episode_title=episode_title)
+    episode_entry=Anime(anime_name=anime_name, episode_title=episode_title, episode_length=episode_length)
 
     db.session.add(episode_entry)
     db.session.commit()
