@@ -69,6 +69,7 @@ def process_login():
         # Log in user by storing the user's id in session
         session["user_id"] = user.user_id
         session["name"] = user.name
+        session["email"] = user.email
         
         
 
@@ -80,16 +81,36 @@ def watched_anime_log():
 
     return render_template("log.html")
 
+@app.route("/future-log")
+def future_anime_log():
+    return render_template("future-log.html")
+
+
 @app.route("/create-log", methods=["POST"])
 def create_log():
     anime_name = request.form.get("anime_name")
     episode_title = request.form.get("episode_title")
     episode_length = request.form.get("episode_length")
+    fk_user_id= session["user_id"] 
 
     
-    anime_added=crud.create_anime(anime_name, episode_title, episode_length)
+    anime_added=crud.create_anime(anime_name, episode_title, episode_length, fk_user_id)
 
     return render_template("anime-added.html", anime_name=anime_name)
+
+
+@app.route("/create-watch-log", methods=["POST"])
+def create_future_log():
+    anime_name = request.form.get("anime_name")
+    fk_user_id= session["email"] 
+    
+
+    
+    future_anime_added=crud.create_future_anime(anime_name, fk_user_id)
+    
+    return render_template("anime-added.html", anime_name=anime_name)
+
+
 
 @app.route("/all-anime")
 
